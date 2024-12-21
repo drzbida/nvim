@@ -22,16 +22,16 @@ return {
                 diag_error = utils.get_highlight("DiagnosticError").fg,
                 diag_hint = utils.get_highlight("DiagnosticHint").fg,
                 diag_info = utils.get_highlight("DiagnosticInfo").fg,
-                git_del = utils.get_highlight("DiffDelete").fg,
-                git_add = utils.get_highlight("DiffAdded").fg,
-                git_change = utils.get_highlight("DiffChange").fg,
+                git_del = utils.get_highlight("diffDeleted").fg,
+                git_add = utils.get_highlight("diffAdded").fg,
+                git_change = utils.get_highlight("diffChanged").fg,
             }
         end
 
         heirline.setup {
+            tabline = require "plugins.heirline.base.tabline",
             statusline = require "plugins.heirline.base.statusline",
             winbar = require "plugins.heirline.base.winbars",
-            tabline = {},
             opts = {
                 colors = setup_colors(),
                 disable_winbar_cb = function(args)

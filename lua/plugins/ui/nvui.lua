@@ -1,6 +1,7 @@
 return {
     {
         "nvchad/base46",
+        enabled = false,
         build = function()
             require("base46").load_all_highlights()
         end,
@@ -8,6 +9,7 @@ return {
 
     {
         "nvchad/ui",
+        enabled = false,
         lazy = false,
         priority = 1000,
         config = function()
@@ -15,7 +17,7 @@ return {
         end,
     },
 
-    "nvzone/volt",
-    "nvzone/menu",
-    { "nvzone/minty", cmd = { "Huefy", "Shades" } },
+    -- "nvzone/volt",
+    -- "nvzone/menu",
+    -- { "nvzone/minty", cmd = { "Huefy", "Shades" } },
 }

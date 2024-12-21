@@ -70,7 +70,7 @@ local ViMode = {
 }
 
 return utils.surround(
-    { "", surrounds.slanted_thick.right },
+    { "", surrounds.slope.right },
     "bright_fg",
-    utils.surround({ "", surrounds.slanted_thick.right }, "purple", ViMode)
+    utils.surround({ "", surrounds.slope.right }, "purple", ViMode)
 )

@@ -62,7 +62,7 @@ return {
         },
     },
     config = function(_, opts)
-        dofile(vim.g.base46_cache .. "trouble")
+        --dofile(vim.g.base46_cache .. "trouble")
         require("trouble").setup(opts)
     end,
 }

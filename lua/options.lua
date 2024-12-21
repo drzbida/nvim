@@ -15,6 +15,7 @@ o.timeoutlen = 400
 o.updatetime = 250
 
 o.signcolumn = "yes"
+vim.o.showtabline = 2
 o.splitbelow = true
 o.splitright = true
 o.undofile = true

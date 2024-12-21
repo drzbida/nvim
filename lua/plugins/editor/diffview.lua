@@ -39,7 +39,7 @@ return {
         },
     },
     config = function(_, opts)
-        dofile(vim.g.base46_cache .. "diffview")
+        --dofile(vim.g.base46_cache .. "diffview")
         require("diffview").setup(opts)
     end,
 }

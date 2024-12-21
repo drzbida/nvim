@@ -2,7 +2,7 @@ return {
     "lewis6991/gitsigns.nvim",
     event = "User FilePost",
     opts = function()
-        dofile(vim.g.base46_cache .. "git")
+        --dofile(vim.g.base46_cache .. "git")
         return {
             current_line_blame = true,
             current_line_blame_opts = {

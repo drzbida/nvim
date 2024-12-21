@@ -1,7 +1,3 @@
-local config = require "nvconfig"
-local get_theme_tb = require("base46").get_theme_tb
-local colors = get_theme_tb "base_30"
-
 local Align = { provider = "%=" }
 local Space = { provider = " " }
 
@@ -57,9 +53,13 @@ local DefaultStatusline = {
 }
 
 return {
-    hl = {
-        bg = config.base46.transparency and "NONE" or colors.statusline_bg,
-    },
+    hl = function()
+        if conditions.is_active() then
+            return "StatusLine"
+        else
+            return "StatusLineNC"
+        end
+    end,
 
     fallthrough = false,
 

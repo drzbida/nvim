@@ -4,8 +4,8 @@ return {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
-        dofile(vim.g.base46_cache .. "syntax")
-        dofile(vim.g.base46_cache .. "treesitter")
+        --dofile(vim.g.base46_cache .. "syntax")
+        --dofile(vim.g.base46_cache .. "treesitter")
         return {
             auto_install = true,
             ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc" },

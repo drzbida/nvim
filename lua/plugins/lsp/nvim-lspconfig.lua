@@ -2,8 +2,8 @@ return {
     "neovim/nvim-lspconfig",
     event = "User FilePost",
     config = function()
-        dofile(vim.g.base46_cache .. "lsp")
-        require("nvchad.lsp").diagnostic_config()
+        --dofile(vim.g.base46_cache .. "lsp")
+        -- require("nvchad.lsp").diagnostic_config()
 
         local defaults = require "plugins.lsp.configs.defaults"
 
