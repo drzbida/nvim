@@ -6,5 +6,5 @@ return {
     { import = "plugins.lsp" },
     { import = "plugins.ui" },
     { import = "plugins.utils" },
-    { import = "plugins.heirline" },
+    { import = "plugins.heirline.init" },
 }

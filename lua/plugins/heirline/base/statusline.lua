@@ -37,12 +37,11 @@ local TerminalStatusline = {
 local DefaultStatusline = {
     require "plugins.heirline.components.vimode",
     Space,
-    require "plugins.heirline.components.filename",
-    Space,
     require "plugins.heirline.components.git",
-    Space,
     Align,
     --
+    require "plugins.heirline.components.macrorec",
+    Space,
     require "plugins.heirline.components.dapmessages",
     Align,
     --
@@ -50,10 +49,11 @@ local DefaultStatusline = {
     Space,
     require "plugins.heirline.components.diagnostics",
     Space,
-    require "plugins.heirline.components.workdir",
-    Space,
     require "plugins.heirline.components.lspactive",
     Space,
+    require "plugins.heirline.components.workdir",
+    Space,
+    require "plugins.heirline.components.scrollbar",
 }
 
 return {

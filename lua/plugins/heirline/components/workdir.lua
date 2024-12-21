@@ -1,30 +1,58 @@
-return {
+local utils = require "heirline.utils"
+local surrounds = require "plugins.heirline.surrounds"
+
+local CwdIcon = {
     init = function(self)
-        self.icon = (vim.fn.haslocaldir(0) == 1 and "l" or "g") .. " " .. " "
-        local cwd = vim.fn.getcwd(0)
-        self.cwd = vim.fn.fnamemodify(cwd, ":~")
+        self.icon = " "
     end,
-    hl = { fg = "blue", bold = true },
+    hl = {
+        bg = "blue",
+        bold = true,
+        fg = "bright_bg",
+    },
+
+    flexible = 2,
+
+    {
+        provider = function(self)
+            return self.icon
+        end,
+    },
+
+    {
+        provider = "",
+    },
+}
+
+local CwdText = {
+    init = function(self)
+        local cwd = vim.fn.getcwd(0)
+        self.cwd = vim.fn.fnamemodify(cwd, ":~"):gsub("\\", "/")
+    end,
+    hl = {
+        bg = "bright_bg",
+        fg = "blue",
+    },
 
     flexible = 1,
 
     {
-        -- evaluates to the full-lenth path
         provider = function(self)
-            local trail = self.cwd:sub(-1) == "/" and "" or "/"
-            return self.icon .. self.cwd .. trail .. " "
+            return self.cwd
         end,
     },
     {
-        -- evaluates to the shortened path
         provider = function(self)
-            local cwd = vim.fn.pathshorten(self.cwd)
-            local trail = self.cwd:sub(-1) == "/" and "" or "/"
-            return self.icon .. cwd .. trail .. " "
+            local cwd = vim.fn.fnamemodify(self.cwd, ":t")
+            return cwd
         end,
     },
     {
-        -- evaluates to "", hiding the component
         provider = "",
     },
 }
+
+return utils.surround({ surrounds.half_circles.left, "" }, "blue", {
+    CwdIcon,
+    utils.surround({ surrounds.half_circles.left, "" }, "bright_bg", CwdText),
+})
