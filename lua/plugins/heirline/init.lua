@@ -1,6 +1,6 @@
 return {
     "rebelot/heirline.nvim",
-    event = "VeryLazy",
+    event = "UIEnter",
     config = function()
         local heirline = require "heirline"
         local conditions = require "heirline.conditions"
@@ -15,7 +15,7 @@ return {
                     bright_bg = utils.get_highlight("Folded").bg,
                     bright_fg = utils.get_highlight("Folded").fg,
                     red = utils.get_highlight("DiagnosticError").fg,
-                    dark_red = utils.get_highlight("DiffDelete").bg,
+                    dark_red = utils.get_highlight("DiffDelete").fg, -- ??
                     green = utils.get_highlight("String").fg,
                     blue = utils.get_highlight("Function").fg,
                     gray = utils.get_highlight("NonText").fg,

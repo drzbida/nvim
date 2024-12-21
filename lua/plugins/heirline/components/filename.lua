@@ -23,22 +23,16 @@ local FileIcon = {
 }
 
 local FileName = {
-    provider = function(self)
-        local filename = vim.fn.fnamemodify(self.filename, ":.")
-
-        if filename == "" then
-            filename = "[No Name]"
+    init = function(self)
+        self.lfilename = vim.fn.fnamemodify(self.filename, ":t")
+        if self.lfilename == "" then
+            self.lfilename = "[No Name]"
         end
-
-        -- if not conditions.width_percent_below(#filename, 0.25) then
-        --     filename = vim.fn.pathshorten(filename)
-        -- end
-
-        return filename
     end,
-    hl = {
-        fg = utils.get_highlight("Directory").fg,
-    },
+    hl = { fg = utils.get_highlight("Directory").fg },
+    provider = function(self)
+        return self.lfilename
+    end,
 }
 
 local FileFlags = {
