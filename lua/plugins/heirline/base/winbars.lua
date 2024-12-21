@@ -1,15 +1,17 @@
 local conditions = require "heirline.conditions"
 local utils = require "heirline.utils"
+local surrounds = require "plugins.heirline.surrounds"
 
-local FileType = require "plugins.heirline.components.filetype"
 local Space = {
     provider = " ",
 }
+local Align = {
+    provider = "%=",
+}
 
-local TerminalName = require "plugins.heirline.components.termname"
 local FileNameBlock = require "plugins.heirline.components.filename"
 
-return {
+local Fn = {
     fallthrough = false,
     {
         condition = function()
@@ -23,7 +25,18 @@ return {
         condition = function()
             return not conditions.is_active()
         end,
-        utils.surround({ "", "" }, "bright_bg", { hl = { fg = "gray", force = true }, FileNameBlock }),
+        utils.surround(
+            { surrounds.half_circles.left, surrounds.half_circles.right },
+            "bright_bg",
+            { hl = { fg = "gray", force = true }, FileNameBlock }
+        ),
     },
-    utils.surround({ "", "" }, "bright_bg", FileNameBlock),
+    utils.surround({ surrounds.half_circles.left, surrounds.half_circles.right }, "bright_bg", FileNameBlock),
+}
+
+return {
+    Fn,
+    Space,
+    require "plugins.heirline.components.navic",
+    Align,
 }

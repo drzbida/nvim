@@ -1,4 +1,3 @@
-local conditions = require "heirline.conditions"
 local utils = require "heirline.utils"
 
 local FileNameBase = {
@@ -40,18 +39,18 @@ local FileFlags = {
         condition = function()
             return vim.bo.modified
         end,
-        provider = "[+]",
+        provider = "  ",
         hl = {
-            fg = "green",
+            fg = "git_add",
         },
     },
     {
         condition = function()
             return not vim.bo.modifiable or vim.bo.readonly
         end,
-        provider = "",
+        provider = "  ",
         hl = {
-            fg = "orange",
+            fg = "purple",
         },
     },
 }

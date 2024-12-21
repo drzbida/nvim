@@ -1,7 +1,7 @@
 local M = {}
 local map = vim.keymap.set
 
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
     local function opts(desc)
         return { buffer = bufnr, desc = "LSP " .. desc }
     end
@@ -16,9 +16,7 @@ M.on_attach = function(_, bufnr)
 
     map("n", "gr", vim.lsp.buf.references, opts "Show references")
 
-    -- map("n", "<leader>i", function()
-    --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    -- end, { noremap = true, silent = true, desc = "Toggle inlay hints" })
+    require("nvim-navic").attach(client, bufnr)
 end
 
 M.on_init = function(client, _)
