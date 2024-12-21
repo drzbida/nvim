@@ -61,7 +61,6 @@ return {
         },
     },
     config = function(_, opts)
-        --dofile(vim.g.base46_cache .. "whichkey")
         local wk = require "which-key"
         wk.setup(opts)
         if not vim.tbl_isempty(opts.defaults) then

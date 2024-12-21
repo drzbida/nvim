@@ -1,4 +1,3 @@
--- vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -19,9 +18,6 @@ require("lazy").setup({
     { import = "plugins" },
 }, lazy_config)
 
---dofile(vim.g.base46_cache .. "defaults")
---dofile(vim.g.base46_cache .. "statusline")
---dofile(vim.g.base46_cache .. "git")
 
 vim.schedule(function()
     require "mappings"

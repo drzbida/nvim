@@ -9,7 +9,6 @@ return {
         },
     },
     opts = function()
-        --dofile(vim.g.base46_cache .. "nvimtree")
         return {
             filters = { dotfiles = false },
             disable_netrw = true,
