@@ -9,7 +9,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-
 require "options"
 
 require("lazy").setup({
@@ -60,10 +59,10 @@ require("lazy").setup({
             },
         },
     },
-}
-)
-
+})
 
 vim.schedule(function()
     require "mappings"
 end)
+
+require "custom.plugins-markdown"

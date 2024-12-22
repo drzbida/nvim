@@ -37,17 +37,13 @@ return {
                 "bash-language-server",
 
                 -- godot
-                "gdscript",
-                "godot_resource",
-                "gdshader",
+                -- "gdscript",
+                -- "godot_resource",
+                -- "gdshader",
 
                 -- .net
                 "roslyn",
                 -- "netcoredbg",
-
-                -- rust
-                "rust-analyzer",
-                "codelldb",
             },
         }
     end,
