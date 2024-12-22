@@ -4,7 +4,7 @@
 ```powershell
 Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
 Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
-git clone https://github.com/drzbida/nvim-configs $env:LOCALAPPDATA\nvim
+git clone https://github.com/drzbida/nvim $env:LOCALAPPDATA\nvim
 ```
 - Linux / MacOS
 
@@ -13,13 +13,13 @@ mv ~/.config/nvim{,.bak}
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
-git clone https://github.com/drzbida/nvim-configs ~/.config/nvim
+git clone https://github.com/drzbida/nvim ~/.config/nvim
 ```
 - Try in Docker
 ```powershell
 docker run -w /root -it --rm alpine:edge sh -uelic '
   apk add git lazygit fzf curl neovim ripgrep alpine-sdk --update
-  git clone https://github.com/drzbida/nvim-configs ~/.config/nvim
+  git clone https://github.com/drzbida/nvim ~/.config/nvim
   cd ~/.config/nvim
   nvim
 '
