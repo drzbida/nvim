@@ -32,4 +32,15 @@ return {
         },
     },
     opts = {},
+    config = function(_, opts)
+        require("persistence").setup(opts)
+
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "PersistenceSavePre",
+            callback = function()
+                vim.cmd "NvimTreeClose"
+                require("dapui").close()
+            end,
+        })
+    end
 }

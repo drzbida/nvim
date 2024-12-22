@@ -1,6 +1,6 @@
 return {
     defaults = { lazy = true },
-    install = { colorscheme = { "kangawa" } },
+    install = { colorscheme = { "kanagawa" } },
 
     ui = {
         icons = {
