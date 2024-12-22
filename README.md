@@ -24,7 +24,19 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
   nvim
 '
 ```
-
+# Dependencies
+- Neovim >= 0.10.2
+- Git
+- a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater)
+- a C compiler for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
+- [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
+- [lazygit](https://github.com/jesseduffield/lazygit) (optional)
+- [yazi](https://github.com/sxyazi/yazi) (optional)
+- a terminal image viewer (ueberzug / chafa / viu / etc) (optional)
+- terminal with truecolor (and optionally image) support (wezterm / alacritty / kitty / etc)
+  
 # Packages
 ## 📌 [mason.nvim](https://github.com/williamboman/mason.nvim.git) ![Stars](https://img.shields.io/github/stars/williamboman/mason.nvim?style=flat)
 - **Author**: williamboman
