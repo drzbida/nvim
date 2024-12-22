@@ -19,37 +19,6 @@ map("n", "N", "Nzz")
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 map("t", "<leader><Esc>", "<C-\\><C-N>", { desc = "Escape terminal mode" })
 
--- NVCHAD KEYBINDS
-map("i", "<C-c>", function()
-    if vim.bo.buftype ~= "terminal" then
-        require("minty.huefy").open()
-    end
-end, { noremap = true, silent = true })
-
-map("n", "<leader>ut", function()
-    require("nvchad.themes").open()
-end, { desc = "Select theme" })
-
--- SPAWN TERMINAL KEYBINDS
-map("n", "<leader><leader>s", function()
-    require("nvchad.term").new {
-        pos = "sp",
-    }
-end, { noremap = true, silent = true, desc = "Spawn Horizontal Terminal" })
-
-map("n", "<leader><leader>v", function()
-    require("nvchad.term").new {
-        pos = "vsp",
-        size = 0.3,
-    }
-end, { noremap = true, silent = true, desc = "Spawn Vertical Terminal" })
-
-map({ "n", "t" }, "<C-_>", function()
-    require("nvchad.term").toggle {
-        pos = "float",
-    }
-end, { noremap = true, silent = true, desc = "Toggle Floating Terminal" })
-
 -- COMMENT
 map("n", "<leader>/", "gcc", { desc = "Comment Code", remap = true })
 map("v", "<leader>/", "gc", { desc = "Comment Code", remap = true })
