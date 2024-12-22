@@ -1,5 +1,4 @@
 - [neovim](https://github.com/neovim/neovim)
-- [NvChad](https://github.com/NvChad/NvChad)
 - [actions-preview.nvim](https://github.com/aznhe21/actions-preview.nvim)
 - [auto-session](https://github.com/rmagatti/auto-session)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)

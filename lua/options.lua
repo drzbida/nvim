@@ -3,6 +3,7 @@ local o = vim.o
 local g = vim.g
 
 -- {{{ General Settings
+o.termguicolors = true
 o.laststatus = 3
 o.showmode = false
 o.clipboard = "unnamedplus"
@@ -58,7 +59,7 @@ vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. d
 if is_windows() then
     vim.o.shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
     vim.o.shellcmdflag =
-        "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
+    "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
     vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
     vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
     vim.o.shellquote = ""

@@ -1,3 +1,94 @@
+local lsp_icons = {
+    Namespace = "󰌗",
+    Text = "󰉿",
+    Method = "󰆧",
+    Function = "󰆧",
+    Constructor = "",
+    Field = "󰜢",
+    Variable = "󰀫",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈚",
+    Reference = "󰈇",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "󰙅",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = "󰊄",
+    Table = "",
+    Object = "󰅩",
+    Tag = "",
+    Array = "[]",
+    Boolean = "",
+    Number = "",
+    Null = "󰟢",
+    Supermaven = "",
+    String = "󰉿",
+    Calendar = "",
+    Watch = "󰥔",
+    Package = "",
+    Copilot = "",
+    Codeium = "",
+    TabNine = "",
+    BladeNav = "",
+}
+
+--- Configure completion settings
+--- @param atom_styled boolean: Whether to use Atom style
+--- @param icons_left boolean: Whether to display icons on the left
+local cmp_config = function(atom_styled, icons_left)
+    local fields = (atom_styled or icons_left) and { "kind", "abbr", "menu" } or { "abbr", "kind", "menu" }
+    return {
+        formatting = {
+            format = function(_, item)
+                local icon = lsp_icons[item.kind] or ""
+                local kind = item.kind or ""
+
+                if atom_styled then
+                    item.menu = kind
+                    item.menu_hl_group = "LineNr"
+                    item.kind = " " .. icon .. " "
+                elseif icons_left then
+                    item.menu = kind
+                    item.menu_hl_group = "CmpItemKind" .. kind
+                    item.kind = icon
+                else
+                    item.kind = " " .. icon .. " " .. kind
+                    item.menu_hl_group = "comment"
+                end
+
+                return item
+            end,
+
+            fields = fields,
+        },
+
+        window = {
+            completion = {
+                scrollbar = false,
+                side_padding = atom_styled and 0 or 1,
+                winhighlight = "Normal:CmpPmenu,CursorLine:CmpCompletionSel,Search:None,FloatBorder:CmpBorder",
+                border = atom_styled and "none" or "single",
+            },
+
+            documentation = {
+                border = "single",
+                winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder",
+            },
+        },
+    }
+end
+
 return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -51,7 +142,6 @@ return {
                 { name = "path" },
             },
         }
-        -- return vim.tbl_deep_extend("force", options, require "nvchad.cmp")
-        return options
+        return vim.tbl_deep_extend("force", options, cmp_config(false, true))
     end,
 }

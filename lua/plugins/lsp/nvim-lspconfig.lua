@@ -1,8 +1,30 @@
+local diagnostic_config = function()
+    local x = vim.diagnostic.severity
+
+    vim.diagnostic.config {
+        virtual_text = { prefix = "" },
+        signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+        underline = true,
+        float = { border = "single" },
+    }
+
+    -- Default border style
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    ---@diagnostic disable-next-line: duplicate-set-field
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+        opts = opts or {}
+        ---@diagnostic disable-next-line: inject-field
+        opts.border = "rounded"
+        return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+end
+
 return {
     "neovim/nvim-lspconfig",
     event = "User FilePost",
     config = function()
-        -- require("nvchad.lsp").diagnostic_config()
+        diagnostic_config()
+
 
         local defaults = require "plugins.lsp.configs.defaults"
 
