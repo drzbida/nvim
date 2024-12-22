@@ -10,10 +10,6 @@ M.on_attach = function(client, bufnr)
     map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
     map("n", "gi", vim.lsp.buf.implementation, opts "Go to implementation")
 
-    map("n", "<leader>cr", function()
-        require "nvchad.lsp.renamer"()
-    end, { noremap = true, silent = true, desc = "Rename references" })
-
     map("n", "gr", vim.lsp.buf.references, opts "Show references")
 
     require("nvim-navic").attach(client, bufnr)
