@@ -11,9 +11,9 @@ local SpecialStatusline = {
         }
     end,
 
-    require "plugins.heirline.components.filetype",
+    require "plugins.ui.heirline.components.filetype",
     Space,
-    require "plugins.heirline.components.helpfilename",
+    require "plugins.ui.heirline.components.helpfilename",
     Align,
 }
 
@@ -22,34 +22,34 @@ local TerminalStatusline = {
         return conditions.buffer_matches { buftype = { "terminal" } }
     end,
 
-    require "plugins.heirline.components.vimode",
+    require "plugins.ui.heirline.components.vimode",
     Space,
-    require "plugins.heirline.components.filetype",
+    require "plugins.ui.heirline.components.filetype",
     Space,
-    require "plugins.heirline.components.termname",
+    require "plugins.ui.heirline.components.termname",
     Align,
 }
 
 local DefaultStatusline = {
-    require "plugins.heirline.components.vimode",
+    require "plugins.ui.heirline.components.vimode",
     Space,
-    require "plugins.heirline.components.git",
+    require "plugins.ui.heirline.components.git",
     Align,
     --
-    require "plugins.heirline.components.macrorec",
+    require "plugins.ui.heirline.components.macrorec",
     Space,
-    require "plugins.heirline.components.dapmessages",
+    require "plugins.ui.heirline.components.dapmessages",
     Align,
     --
-    require "plugins.heirline.components.fileencoding",
+    require "plugins.ui.heirline.components.fileencoding",
     Space,
-    require "plugins.heirline.components.diagnostics",
+    require "plugins.ui.heirline.components.diagnostics",
     Space,
-    require "plugins.heirline.components.lspactive",
+    require "plugins.ui.heirline.components.lspactive",
     Space,
-    require "plugins.heirline.components.workdir",
+    require "plugins.ui.heirline.components.workdir",
     Space,
-    require "plugins.heirline.components.scrollbar",
+    require "plugins.ui.heirline.components.scrollbar",
 }
 
 return {

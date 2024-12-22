@@ -1,6 +1,6 @@
 local conditions = require "heirline.conditions"
 local utils = require "heirline.utils"
-local surrounds = require "plugins.heirline.surrounds"
+local surrounds = require "plugins.ui.heirline.surrounds"
 
 local Space = {
     provider = " ",
@@ -9,7 +9,7 @@ local Align = {
     provider = "%=",
 }
 
-local FileNameBlock = require "plugins.heirline.components.filename"
+local FileNameBlock = require "plugins.ui.heirline.components.filename"
 
 local Fn = {
     fallthrough = false,
@@ -37,6 +37,6 @@ local Fn = {
 return {
     Fn,
     Space,
-    require "plugins.heirline.components.navic",
+    require "plugins.ui.heirline.components.navic",
     Align,
 }

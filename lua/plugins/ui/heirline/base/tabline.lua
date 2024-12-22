@@ -1,5 +1,5 @@
 local utils = require("heirline.utils")
-local tab_bufs = require("plugins.heirline.tab_bufs")
+local tab_bufs = require("plugins.ui.heirline.tab_bufs")
 
 local TablineBufnr = {
     provider = function(self)
@@ -9,20 +9,7 @@ local TablineBufnr = {
 }
 
 
-local FileIcon = {
-    init = function(self)
-        local filename = self.filename
-        local extension = vim.fn.fnamemodify(filename, ":e")
-        self.icon, self.icon_color =
-            require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
-    end,
-    provider = function(self)
-        return self.icon and (self.icon .. " ")
-    end,
-    hl = function(self)
-        return { fg = self.icon_color }
-    end,
-}
+local FileIcon = require("plugins.ui.heirline.components.fileicon")
 
 local TablineFileName = {
     provider = function(self)
@@ -115,7 +102,6 @@ local TablineCloseButton = {
     },
 }
 
--- The final touch!
 local TablineBufferBlock = utils.surround({ "", "" }, function(self)
     if self.is_active then
         return utils.get_highlight("TabLineSel").bg

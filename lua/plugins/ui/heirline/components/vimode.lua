@@ -1,5 +1,5 @@
 local utils = require "heirline.utils"
-local surrounds = require "plugins.heirline.surrounds"
+local surrounds = require "plugins.ui.heirline.surrounds"
 
 local ViMode = {
     init = function(self)
