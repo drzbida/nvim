@@ -1,6 +1,10 @@
 return {
     "folke/snacks.nvim",
-    opts = {},
+    opts = {
+        picker = {
+            enabled = true,
+        },
+    },
     keys = {
         {
             "<leader>ff",
