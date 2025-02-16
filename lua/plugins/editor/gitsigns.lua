@@ -1,6 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
-    event = "User FilePost",
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     opts = function()
         return {
             current_line_blame = true,
