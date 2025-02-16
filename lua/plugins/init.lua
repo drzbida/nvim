@@ -4,7 +4,7 @@ return {
         lazy = false,
         priority = 1500,
         config = function()
-            require("kanagawa").setup({})
+            require("kanagawa").setup {}
             vim.cmd.colorscheme "kanagawa"
         end,
     },
@@ -15,4 +15,5 @@ return {
     { import = "plugins.lsp" },
     { import = "plugins.ui" },
     { import = "plugins.utils" },
+    { import = "plugins.snacks" },
 }
