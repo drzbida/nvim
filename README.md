@@ -46,6 +46,7 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
   - **[bash-language-server](https://github.com/bash-lsp/bash-language-server)** ![Stars](https://img.shields.io/github/stars/bash-lsp/bash-language-server?style=flat)
     - **Author**: bash-lsp
     - **About**: A language server for Bash
+  - **[csharpier](https://csharpier.com)** 
   - **[css-lsp](https://github.com/microsoft/vscode-css-languageservice)** ![Stars](https://img.shields.io/github/stars/microsoft/vscode-css-languageservice?style=flat)
     - **Author**: microsoft
     - **About**: CSS, LESS & SCSS language service extracted from VSCode to be reused, e.g in the Monaco editor.
@@ -77,21 +78,9 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
   - **[typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)** ![Stars](https://img.shields.io/github/stars/typescript-language-server/typescript-language-server?style=flat)
     - **Author**: typescript-language-server
     - **About**: TypeScript & JavaScript Language Server
-## [cmp-buffer](https://github.com/hrsh7th/cmp-buffer.git) ![Stars](https://img.shields.io/github/stars/hrsh7th/cmp-buffer?style=flat)
-- **Author**: hrsh7th
-- **About**: nvim-cmp source for buffer words
-## [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp.git) ![Stars](https://img.shields.io/github/stars/hrsh7th/cmp-nvim-lsp?style=flat)
-- **Author**: hrsh7th
-- **About**: nvim-cmp source for neovim builtin LSP client
-## [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua.git) ![Stars](https://img.shields.io/github/stars/hrsh7th/cmp-nvim-lua?style=flat)
-- **Author**: hrsh7th
-- **About**: nvim-cmp source for nvim lua
-## [cmp-path](https://github.com/hrsh7th/cmp-path.git) ![Stars](https://img.shields.io/github/stars/hrsh7th/cmp-path?style=flat)
-- **Author**: hrsh7th
-- **About**: nvim-cmp source for path
-## [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip.git) ![Stars](https://img.shields.io/github/stars/saadparwaiz1/cmp_luasnip?style=flat)
-- **Author**: saadparwaiz1
-- **About**: luasnip completion source for nvim-cmp
+## [blink.cmp](https://github.com/saghen/blink.cmp.git) ![Stars](https://img.shields.io/github/stars/saghen/blink.cmp?style=flat)
+- **Author**: Saghen
+- **About**: Performant, batteries-included completion plugin for Neovim 
 ## [conform.nvim](https://github.com/stevearc/conform.nvim.git) ![Stars](https://img.shields.io/github/stars/stevearc/conform.nvim?style=flat)
 - **Author**: stevearc
 - **About**: Lightweight yet powerful formatter plugin for Neovim
@@ -122,9 +111,15 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 ## [lazy.nvim](https://github.com/folke/lazy.nvim.git) ![Stars](https://img.shields.io/github/stars/folke/lazy.nvim?style=flat)
 - **Author**: folke
 - **About**: 💤 A modern plugin manager for Neovim
+## [lazydev.nvim](https://github.com/folke/lazydev.nvim.git) ![Stars](https://img.shields.io/github/stars/folke/lazydev.nvim?style=flat)
+- **Author**: folke
+- **About**: Faster LuaLS setup for Neovim
 ## [LuaSnip](https://github.com/L3MON4D3/LuaSnip.git) ![Stars](https://img.shields.io/github/stars/L3MON4D3/LuaSnip?style=flat)
 - **Author**: L3MON4D3
 - **About**: Snippet Engine for Neovim written in Lua.
+## [mini.nvim](https://github.com/echasnovski/mini.nvim.git) ![Stars](https://img.shields.io/github/stars/echasnovski/mini.nvim?style=flat)
+- **Author**: echasnovski
+- **About**: Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
 ## [minty](https://github.com/nvzone/minty.git) ![Stars](https://img.shields.io/github/stars/nvzone/minty?style=flat)
 - **Author**: nvzone
 - **About**: Most Beautifully crafted color tools for Neovim 
@@ -134,12 +129,6 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 ## [nui.nvim](https://github.com/MunifTanjim/nui.nvim.git) ![Stars](https://img.shields.io/github/stars/MunifTanjim/nui.nvim?style=flat)
 - **Author**: MunifTanjim
 - **About**: UI Component Library for Neovim.
-## [nvim-autopairs](https://github.com/windwp/nvim-autopairs.git) ![Stars](https://img.shields.io/github/stars/windwp/nvim-autopairs?style=flat)
-- **Author**: windwp
-- **About**: autopairs for neovim written in lua
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp.git) ![Stars](https://img.shields.io/github/stars/hrsh7th/nvim-cmp?style=flat)
-- **Author**: hrsh7th
-- **About**: A completion plugin for neovim coded in Lua.
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git) ![Stars](https://img.shields.io/github/stars/mfussenegger/nvim-dap?style=flat)
 - **Author**: mfussenegger
 - **About**: Debug Adapter Protocol client implementation for Neovim
@@ -183,11 +172,11 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 - **Author**: nvim-lua
 - **About**: plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
 ## [roslyn.nvim](https://github.com/seblj/roslyn.nvim.git) ![Stars](https://img.shields.io/github/stars/seblj/roslyn.nvim?style=flat)
-- **Author**: seblj
+- **Author**: seblyng
 - **About**: Roslyn LSP plugin for neovim
 ## [snacks.nvim](https://github.com/folke/snacks.nvim.git) ![Stars](https://img.shields.io/github/stars/folke/snacks.nvim?style=flat)
 - **Author**: folke
-- **About**: 🍿 A collection of small QoL plugins for Neovim
+- **About**: 🍿 A collection of QoL plugins for Neovim
 ## [trouble.nvim](https://github.com/folke/trouble.nvim.git) ![Stars](https://img.shields.io/github/stars/folke/trouble.nvim?style=flat)
 - **Author**: folke
 - **About**: 🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.

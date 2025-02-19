@@ -187,8 +187,19 @@ local function generate_markdown_for_plugins()
         local name = plugin.name or "Unknown Plugin"
         local url = plugin.url or "URL not available"
         local description, author = fetch_about_from_github(url)
-        local repo_path = url:match("github.com/(.+)$"):gsub("%.git$", "")
-        local stars_badge = string.format("![Stars](https://img.shields.io/github/stars/%s?style=flat)", repo_path)
+
+        local repo_path = nil
+        if url:find "github.com/" then
+            repo_path = url:match "github.com/(.+)$"
+            if repo_path then
+                repo_path = repo_path:gsub("%.git$", "")
+            end
+        end
+
+        local stars_badge = ""
+        if repo_path then
+            stars_badge = string.format("![Stars](https://img.shields.io/github/stars/%s?style=flat)", repo_path)
+        end
 
         table.insert(markdown_lines, string.format("## [%s](%s) %s", name, url, stars_badge))
         table.insert(markdown_lines, string.format("- **Author**: %s", author))
