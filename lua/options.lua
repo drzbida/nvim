@@ -49,14 +49,17 @@ g.loaded_ruby_provider = 0
 -- }}}
 
 -- {{{ Mason.nvim Path Setup
-local is_windows = require("helpers").is_windows
+local is_windows = require("helpers").is_windows()
 local sep = is_windows and "\\" or "/"
 local delim = is_windows and ";" or ":"
-vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
+
+local mason_bin_path = vim.fn.stdpath "data" .. sep .. "mason" .. sep .. "bin"
+vim.env.PATH = mason_bin_path .. delim .. vim.env.PATH
+vim.o.shell = "zsh"
 -- }}}
 
 -- {{{ Windows-Specific Shell Settings
-if is_windows() then
+if is_windows then
     vim.o.shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
     vim.o.shellcmdflag =
         "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';"

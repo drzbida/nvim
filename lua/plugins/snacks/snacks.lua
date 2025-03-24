@@ -76,7 +76,7 @@ return {
             desc = "Delete Buffer",
         },
         {
-            "<C-_>",
+            "<C-;>",
             function()
                 Snacks.terminal(vim.o.shell, {
                     win = {
