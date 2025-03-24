@@ -12,6 +12,7 @@ end
 return {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
+    event = "VeryLazy",
     config = function()
         diagnostic_config()
 
